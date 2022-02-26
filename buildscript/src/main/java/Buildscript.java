@@ -26,7 +26,6 @@ public class Buildscript extends FabricProject {
 
 	@Override
 	public MappingTree createMappings() {
-		//return Yarn.ofMaven(FabricMaven.URL, FabricMaven.yarn(MC_VERSION + "+build." + YARN_VERSION)).tree;
 		return createMojmap();
 	}
 
@@ -43,6 +42,11 @@ public class Buildscript extends FabricProject {
 	@Override
 	public String getVersion() {
 		return MOD_VERSION + "+" + MC_MAJOR;
+	}
+
+	@Override
+	public int getJavaVersion(){
+		return 17;
 	}
 
 	@Override
