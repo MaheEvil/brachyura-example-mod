@@ -2,6 +2,7 @@ import io.github.coolcrabs.brachyura.fabric.FabricLoader;
 import io.github.coolcrabs.brachyura.fabric.FabricMaven;
 import io.github.coolcrabs.brachyura.fabric.FabricProject;
 import io.github.coolcrabs.brachyura.fabric.Yarn;
+import io.github.coolcrabs.brachyura.mappings.tinyremapper.MappingTreeMappingProvider;
 import io.github.coolcrabs.brachyura.maven.MavenId;
 import io.github.coolcrabs.brachyura.minecraft.Minecraft;
 import io.github.coolcrabs.brachyura.minecraft.VersionMeta;
@@ -25,7 +26,8 @@ public class Buildscript extends FabricProject {
 
 	@Override
 	public MappingTree createMappings() {
-		return Yarn.ofMaven(FabricMaven.URL, FabricMaven.yarn(MC_VERSION + "+build." + YARN_VERSION)).tree;
+		//return Yarn.ofMaven(FabricMaven.URL, FabricMaven.yarn(MC_VERSION + "+build." + YARN_VERSION)).tree;
+		return createMojmap();
 	}
 
 	@Override
